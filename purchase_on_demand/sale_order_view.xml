@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+    <record id="sale_order_form_view" model="ir.ui.view">
+        <field name="model">sale.order</field>
+        <field name="name">sale.order.form</field>
+        <field name="inherit_id" ref="sale.view_order_form" />
+        <field name="arch" type="xml">
+          <xpath expr="//notebook" position="inside">
+              <page string="Purchase Orders">
+                <field name="purchase_ids" create="False" attrs="{'readonly': [('state', 'in', ('done','cancel'))]}"/>
+              </page>
+          </xpath>
+          <xpath expr="//notebook/page[1]/field[@name='order_line']/tree/field[@name='product_updatable']" position="after">
+            <field name="supplier_id" domain="[('supplier', '=', True)]"/>
+          </xpath>          
+        </field>
+    </record>
+  </data>
+
+
+    <data>
+    <record id="sale_order_tree_view" model="ir.ui.view">
+        <field name="model">sale.order</field>
+        <field name="name">sale.order.tree</field>
+        <field name="inherit_id" ref="sale.view_quotation_tree" />
+        <field name="arch" type="xml">
+          <xpath expr="//field[@name='date_order']" position="after">
+
+            <field name="purchase_ids" widget="many2many_tags"/>
+
+          </xpath>
+        </field>
+    </record>
+  </data>
+
+</odoo>
