@@ -8,6 +8,7 @@
         <field name="arch" type="xml">
             <field name="origin" position="attributes">
                 <attribute name="attrs">{'invisible': True}</attribute>
+                <attribute name="force_save">True</attribute>
             </field>
         </field>
     </record>
