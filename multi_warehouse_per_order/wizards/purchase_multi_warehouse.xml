@@ -1,0 +1,23 @@
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="wizard_multi_warehouse_form">
+            <field name="name">Charge Warehouse</field>
+            <field name="model">purchase.multi_warehouse</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group>
+                        <field name="order_id" readonly="1" />
+                        <field name="company_id" readonly="1" invisible="1" />
+                        <field name="picking_type_id" widget="many2many_tags" domain="[('code','=','incoming'), '|', ('warehouse_id', '=', False), ('warehouse_id.company_id', '=', company_id)]" options="{'no_create': True}" groups="stock.group_stock_multi_locations"/>
+                        <br/>
+                    </group>
+                    <footer>
+                        <button string="Close" class="btn btn-default" special="cancel" />
+                        <button name="charge_lines" string="Confirm" type="object" class="oe_highlight" attrs="{ 'readonly': ['|',('order_id', '=', []), ('picking_type_id', '=', 0)] }"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>

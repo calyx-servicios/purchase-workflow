@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_multi_warehouse,access_multi_warehouse,model_multi_warehouse,base.group_user,1,1,1,1
+access_purchase_multi_warehouse,access_purchase_multi_warehouse,model_purchase_multi_warehouse,base.group_user,1,1,1,1

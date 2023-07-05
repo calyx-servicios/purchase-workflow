@@ -1,0 +1,229 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* multi_warehouse_per_order
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 15.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-05-03 13:24+0000\n"
+"PO-Revision-Date: 2023-05-03 13:24+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: multi_warehouse_per_order
+#: code:addons/multi_warehouse_per_order/models/purchase_order.py:0
+#, python-format
+msgid "Cannot exceed Total Required"
+msgstr "No puede exceder el total requerido"
+
+#. module: multi_warehouse_per_order
+#: model_terms:ir.ui.view,arch_db:multi_warehouse_per_order.view_purchase_order_inherit_multi_warehouse_tab
+msgid "Charge Lines"
+msgstr "Cargar Líneas"
+
+#. module: multi_warehouse_per_order
+#: code:addons/multi_warehouse_per_order/models/purchase_order.py:0
+#, python-format
+msgid "Choose Warehouse"
+msgstr "Elija un Almacén"
+
+#. module: multi_warehouse_per_order
+#: model_terms:ir.ui.view,arch_db:multi_warehouse_per_order.wizard_multi_warehouse_form
+msgid "Close"
+msgstr "Cerrar"
+
+#. module: multi_warehouse_per_order
+#: model:ir.model.fields,field_description:multi_warehouse_per_order.field_multi_warehouse__company_id
+#: model:ir.model.fields,field_description:multi_warehouse_per_order.field_purchase_multi_warehouse__company_id
+msgid "Company"
+msgstr "Compañía"
+
+#. module: multi_warehouse_per_order
+#: model:ir.model.fields.selection,name:multi_warehouse_per_order.selection__multi_warehouse__status__complete
+msgid "Complete"
+msgstr "Completo"
+
+#. module: multi_warehouse_per_order
+#: model_terms:ir.ui.view,arch_db:multi_warehouse_per_order.wizard_multi_warehouse_form
+msgid "Confirm"
+msgstr "Confirmar"
+
+#. module: multi_warehouse_per_order
+#: model:ir.model.fields,field_description:multi_warehouse_per_order.field_multi_warehouse__create_uid
+#: model:ir.model.fields,field_description:multi_warehouse_per_order.field_purchase_multi_warehouse__create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: multi_warehouse_per_order
+#: model:ir.model.fields,field_description:multi_warehouse_per_order.field_multi_warehouse__create_date
+#: model:ir.model.fields,field_description:multi_warehouse_per_order.field_purchase_multi_warehouse__create_date
+msgid "Created on"
+msgstr "Creado en"
+
+#. module: multi_warehouse_per_order
+#: model:ir.model.fields,field_description:multi_warehouse_per_order.field_purchase_order__current_total
+msgid "Current Total on Product Lines"
+msgstr "Total Actual"
+
+#. module: multi_warehouse_per_order
+#: model:ir.model.fields,field_description:multi_warehouse_per_order.field_multi_warehouse__picking_type_id
+#: model:ir.model.fields,field_description:multi_warehouse_per_order.field_purchase_multi_warehouse__picking_type_id
+msgid "Deliver to"
+msgstr "Entregar a"
+
+#. module: multi_warehouse_per_order
+#: model:ir.model.fields,field_description:multi_warehouse_per_order.field_multi_warehouse__name
+msgid "Description"
+msgstr "Descripción"
+
+#. module: multi_warehouse_per_order
+#: model:ir.model.fields,field_description:multi_warehouse_per_order.field_multi_warehouse__display_name
+#: model:ir.model.fields,field_description:multi_warehouse_per_order.field_purchase_multi_warehouse__display_name
+msgid "Display Name"
+msgstr "Nombre para mostrar"
+
+#. module: multi_warehouse_per_order
+#: model:ir.model.fields,field_description:multi_warehouse_per_order.field_multi_warehouse__id
+#: model:ir.model.fields,field_description:multi_warehouse_per_order.field_purchase_multi_warehouse__id
+msgid "ID"
+msgstr ""
+
+#. module: multi_warehouse_per_order
+#: model:ir.model.fields.selection,name:multi_warehouse_per_order.selection__multi_warehouse__status__incomplete
+msgid "Incomplete"
+msgstr "Incompleto"
+
+#. module: multi_warehouse_per_order
+#: model:ir.model.fields,field_description:multi_warehouse_per_order.field_multi_warehouse____last_update
+#: model:ir.model.fields,field_description:multi_warehouse_per_order.field_purchase_multi_warehouse____last_update
+msgid "Last Modified on"
+msgstr "Última modificación el"
+
+#. module: multi_warehouse_per_order
+#: model:ir.model.fields,field_description:multi_warehouse_per_order.field_multi_warehouse__write_uid
+#: model:ir.model.fields,field_description:multi_warehouse_per_order.field_purchase_multi_warehouse__write_uid
+msgid "Last Updated by"
+msgstr "Última actualización por"
+
+#. module: multi_warehouse_per_order
+#: model:ir.model.fields,field_description:multi_warehouse_per_order.field_multi_warehouse__write_date
+#: model:ir.model.fields,field_description:multi_warehouse_per_order.field_purchase_multi_warehouse__write_date
+msgid "Last Updated on"
+msgstr "Ultima actualización en"
+
+#. module: multi_warehouse_per_order
+#: model:ir.model.fields,field_description:multi_warehouse_per_order.field_multi_warehouse__order_line_id
+msgid "Line ID"
+msgstr "ID Línea"
+
+#. module: multi_warehouse_per_order
+#: model:ir.model,name:multi_warehouse_per_order.model_multi_warehouse
+#: model:ir.model.fields,field_description:multi_warehouse_per_order.field_purchase_order__multi_warehouse_ids
+msgid "Multi Warehouse"
+msgstr "Almacén múltiple"
+
+#. module: multi_warehouse_per_order
+#: model:ir.model.fields,field_description:multi_warehouse_per_order.field_purchase_order__multi_warehouse_ok
+msgid "Multi-Warehouse"
+msgstr "Multialmacén"
+
+#. module: multi_warehouse_per_order
+#: model_terms:ir.ui.view,arch_db:multi_warehouse_per_order.view_purchase_order_inherit_multi_warehouse_tab
+msgid "New Quantity on Warehouse"
+msgstr "Nueva cantidad en almacén"
+
+#. module: multi_warehouse_per_order
+#: model:ir.model.fields,field_description:multi_warehouse_per_order.field_multi_warehouse__order_id
+#: model:ir.model.fields,field_description:multi_warehouse_per_order.field_purchase_multi_warehouse__order_id
+msgid "Order ID"
+msgstr "Orden"
+
+#. module: multi_warehouse_per_order
+#: code:addons/multi_warehouse_per_order/models/purchase_order.py:0
+#, python-format
+msgid "Please complete the warehouse options before confirming"
+msgstr "Por favor, Complete las opciones de almacenes antes de confirmar."
+
+#. module: multi_warehouse_per_order
+#: model:ir.model.fields,field_description:multi_warehouse_per_order.field_multi_warehouse__product_id
+msgid "Product"
+msgstr "Producto"
+
+#. module: multi_warehouse_per_order
+#: model:ir.model,name:multi_warehouse_per_order.model_purchase_order
+msgid "Purchase Order"
+msgstr "Pedido de compra"
+
+#. module: multi_warehouse_per_order
+#: model:ir.model.fields,field_description:multi_warehouse_per_order.field_multi_warehouse__quantity
+msgid "Quantity"
+msgstr "Cantidad"
+
+#. module: multi_warehouse_per_order
+#: model_terms:ir.ui.view,arch_db:multi_warehouse_per_order.view_purchase_order_inherit_multi_warehouse_tab
+msgid "Quantity Avaible"
+msgstr "Cantidad Disponible"
+
+#. module: multi_warehouse_per_order
+#: model:ir.model.fields,field_description:multi_warehouse_per_order.field_multi_warehouse__quantity_available
+msgid "Quantity Available"
+msgstr "Cantidad Disponible"
+
+#. module: multi_warehouse_per_order
+#: model:ir.model.fields,field_description:multi_warehouse_per_order.field_multi_warehouse__new_quantity
+msgid "Set Quantity"
+msgstr "Establecer cantidad"
+
+#. module: multi_warehouse_per_order
+#: model:ir.model.fields,field_description:multi_warehouse_per_order.field_multi_warehouse__status
+msgid "Status"
+msgstr "Estado"
+
+#. module: multi_warehouse_per_order
+#: code:addons/multi_warehouse_per_order/models/purchase_order.py:0
+#, python-format
+msgid ""
+"The following warehouses have quantities available: \n"
+" {}.\n"
+"Please set on this lines the available quantity to 0."
+msgstr ""
+"Los siguientes almacenes tienen cantidades disponibles: \n"
+" {}.\n"
+"Por favor, establezca en estas líneas la cantidad disponible en 0."
+
+#. module: multi_warehouse_per_order
+#: code:addons/multi_warehouse_per_order/models/purchase_order.py:0
+#, python-format
+msgid "The quantities available in the warehouse options must be at 0"
+msgstr "Las cantidades disponibles en las opciones de almacén deben estar a 0"
+
+#. module: multi_warehouse_per_order
+#: model:ir.model.fields,field_description:multi_warehouse_per_order.field_purchase_order__total_current_quantity_available
+msgid "Total Current Quantity Available"
+msgstr "Total actual disponible"
+
+#. module: multi_warehouse_per_order
+#: model:ir.model.fields,field_description:multi_warehouse_per_order.field_purchase_order__total_quantity
+msgid "Total on Product Lines"
+msgstr "Total en lineas de productos"
+
+#. module: multi_warehouse_per_order
+#: model_terms:ir.ui.view,arch_db:multi_warehouse_per_order.view_purchase_order_inherit_multi_warehouse_tab
+msgid "Warehouses Options"
+msgstr "Opciones de almacenes"
+
+#. module: multi_warehouse_per_order
+#: model:ir.model,name:multi_warehouse_per_order.model_purchase_multi_warehouse
+msgid "Wizard Multi Warehouse"
+msgstr "Ventana emergente de Almacén Múltiple"
+
+#. module: multi_warehouse_per_order
+#: code:addons/multi_warehouse_per_order/models/purchase_order.py:0
+#, python-format
+msgid "You must set a Vendor Location for this partner %s"
+msgstr "Debe establecer una ubicación de proveedor para este socio %s"

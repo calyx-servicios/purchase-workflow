@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record model="ir.ui.view" id="view_purchase_order_inherit_multi_warehouse_tab">
+        <field name="name">view.purchase.order.inherit.multi.warehouse.tab</field>
+        <field name="model">purchase.order</field>
+        <field name="inherit_id" ref="purchase.purchase_order_form"/>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <xpath expr="//div[@name='reminder']" position="after">
+                <field name="multi_warehouse_ok" widget="boolean_toggle" />
+            </xpath>
+            <xpath expr="//field[@name='picking_type_id']" position="attributes">
+                <attribute name="attrs">{'invisible': [('multi_warehouse_ok', '!=', False)]}</attribute>
+            </xpath>
+            <xpath expr="//page[@name='purchase_delivery_invoice']" position="before">
+                <page name="multi_warehouse" string="Warehouses Options" attrs="{'invisible': [('multi_warehouse_ok', '=', False)]}">
+                    <group name="warehouse_config" string="Warehouses Options">
+                        <group name="header_warehouse">
+                            <button string="Charge Lines" name="charge_lines" type="object" class="oe_highlight"/>
+                        </group>
+                        <field name="multi_warehouse_ids" attrs="{'readonly': ['|',('state', 'in', ['purchase', 'done']),('invoice_count', '!=', 0)]}">
+                            <tree editable="bottom" create="0" decoration-success="status=='complete'" decoration-danger="status=='incomplete'">
+                                <field name="order_id" readonly="1"/>
+                                <field name="order_line_id" readonly="1" />
+                                <field name="product_id" readonly="1" />
+                                <field name="status" invisible="1" />
+                                <field name="name" readonly="1" />
+                                <field name="quantity_available" string="Quantity Avaible" readonly="1"/>
+                                <field name="new_quantity" string="New Quantity on Warehouse" />
+                                <field name="picking_type_id" readonly="1" />
+                            </tree>
+                        </field>
+                        <group class="oe_subtotal_footer oe_right">
+                            <div class="oe_clearfix">
+                                <group >
+                                    <field name="total_quantity" />
+                                </group>
+                            </div>
+                            <div class="oe_clearfix">
+                                <group>
+                                    <field name="total_current_quantity_available" />
+                                </group>
+                            </div>
+                            <div class="oe_clearfix">
+                                <group>
+                                    <field name="current_total" />
+                                </group>
+                            </div>                        
+                        </group>
+                        <div class="oe_clear"/>
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+</odoo>
