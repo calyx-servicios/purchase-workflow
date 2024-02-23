@@ -16,13 +16,28 @@ class PurchaseMultiWarehouse(models.TransientModel):
                 lines = multi_warehouse_obj.search([('order_id', '=', self.order_id.id)])
                 if lines:
                     lines.unlink()
-                for types in self.picking_type_id:
-                    for line in self.order_id.order_line:
-                        multi_warehouse_obj.create({
-                            'order_id': self.order_id.id,
-                            'order_line_id': line.id,
-                            'picking_type_id': types.id,
-                        })
+                order_lines = self.order_id.order_line
+                for line in order_lines:
+                    if line.product_id.is_fuel:
+                        stock_picking = self.picking_type_id
+                        for picking in stock_picking:
+                            product_id =  picking.default_location_dest_id.product_id.id
+                            if product_id == line.product_id.id:
+                                multi_warehouse_obj.create({
+                                'order_id': self.order_id.id,
+                                'order_line_id': line.id,
+                                'picking_type_id': picking.id,
+                            })
+                    else:
+                        stock_picking = self.picking_type_id
+                        for picking in stock_picking:
+                            picking_id = picking.default_location_dest_id.product_id.is_fuel
+                            if not picking_id:
+                                multi_warehouse_obj.create({
+                                    'order_id': self.order_id.id,
+                                    'order_line_id': line.id,
+                                    'picking_type_id': picking.id,
+                                })
         except Exception as e:
             raise UserError(f'Error loading lines{e}')
 
