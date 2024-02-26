@@ -95,7 +95,7 @@ class PurchaseOrder(models.Model):
             'date': date_planned,
             'date_expected': date_planned,
             'location_id': line.order_id.partner_id.property_stock_supplier.id,
-            'location_dest_id': line.order_id._get_destination_location(),
+            'location_dest_id': picking.location_dest_id.id,
             'picking_id': picking.id,
             'partner_id': line.order_id.dest_address_id.id,
             'move_dest_ids': [(4, x) for x in line.order_line_id.move_dest_ids.ids],
