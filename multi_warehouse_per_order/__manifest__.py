@@ -4,11 +4,11 @@
         This module allows from an order to choose multiple warehouses.
     """,
     "author": "Calyx Servicios S.A.",
-    "maintainers": ["Zamora, Javier"],
+    "maintainers": ["Zamora, Javier", "leandro090685"],
     "website": "https://odoo.calyx-cloud.com.ar/",
     "license": "AGPL-3",
     "category": "Purchase",
-    "version": "15.0.2.4.1",
+    "version": "13.0.3.0.0",
     "development_status": "Production/Stable",
     "application": False,
     "installable": True,

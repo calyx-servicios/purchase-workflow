@@ -8,14 +8,14 @@ class PurchaseOrder(models.Model):
 
     multi_warehouse_ok = fields.Boolean('Multi-Warehouse', default=False)
     multi_warehouse_ids = fields.One2many('multi.warehouse', 'order_id')
-    total_quantity = fields.Float(compute='_compute_total_quantity', string='Total on Product Lines') 
+    total_quantity = fields.Float(compute='_compute_total_quantity', string='Total on Product Lines')
     total_current_quantity_available = fields.Float(compute='_compute_total_current_quantity_available', string='Total Current Quantity Available')
     current_total = fields.Float(compute='_compute_current_total', string='Current Total on Product Lines')
 
     @api.depends('order_line.product_qty')
     def _compute_total_quantity(self):
         self.total_quantity = sum(self.order_line.mapped('product_qty'))
-    
+
     @api.depends('current_total', 'total_quantity')
     def _compute_total_current_quantity_available(self):
         self.total_current_quantity_available = self.total_quantity - self.current_total
@@ -42,7 +42,7 @@ class PurchaseOrder(models.Model):
                 if sum(order.multi_warehouse_ids.mapped('quantity_available')) != 0:
                     raise UserError(_('The quantities available in the warehouse options must be at 0'))
                 if any(product.type in ['product', 'consu'] for product in order.multi_warehouse_ids.product_id):
-                    order = order.with_company(order.company_id)
+                    order = order.with_context(company_id=order.company_id)
                     pickings = order.picking_ids.filtered(lambda x: x.state not in ('done', 'cancel'))
                     if not pickings:
                         picking = order._create_multi_picking(self)
@@ -64,7 +64,7 @@ class PurchaseOrder(models.Model):
                 elif not rec.multi_warehouse_ids:
                     raise UserError(_('Please complete the warehouse options before confirming'))
         return super(PurchaseOrder, self).button_confirm()
-                
+
 
     def _create_multi_picking(self, order):
         picking_obj = self.env['stock.picking']
@@ -93,9 +93,9 @@ class PurchaseOrder(models.Model):
             'name': (line.order_line_id.product_id.display_name or '')[:2000],
             'product_id': line.order_line_id.product_id.id,
             'date': date_planned,
-            'date_deadline': date_planned,
+            'date_expected': date_planned,
             'location_id': line.order_id.partner_id.property_stock_supplier.id,
-            'location_dest_id': (line.order_line_id.orderpoint_id and not (line.order_line_id.move_ids | line.order_line_id.move_dest_ids)) and line.order_line_id.orderpoint_id.location_id.id or line.order_id._get_destination_location(),
+            'location_dest_id': picking.location_dest_id.id,
             'picking_id': picking.id,
             'partner_id': line.order_id.dest_address_id.id,
             'move_dest_ids': [(4, x) for x in line.order_line_id.move_dest_ids.ids],
@@ -111,7 +111,6 @@ class PurchaseOrder(models.Model):
             'warehouse_id': line.picking_type_id.warehouse_id.id,
             'product_uom_qty': line.new_quantity,
             'product_uom': line.order_line_id.product_uom.id,
-            'product_packaging_id': line.order_line_id.product_packaging_id.id,
             'sequence': line.order_line_id.sequence,
         }
 
